@@ -4,7 +4,7 @@ import cors from 'cors'
 
 import cookieParser from "cookie-parser";   
 
-const app=express()
+const app=express() // app is a common name . express() is a method where all the properites are transferred. 
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN,   // app.use: used in middlewares and backend configurations
@@ -14,7 +14,7 @@ app.use(cors({
 app.use(express.json({limit:"10kb"})) // agar data in the form of json hai to uske liye app ko configure karna padega ( set limit of json file : 10kb)
 app.use(express.urlencoded({extended:true,limit:"16kb"})) // url configurations
 
-app.use(express.static("public"))  //storing files, folders, etc on our server.( public folder)
+app.use(express.static("public"))  //storing files, folders, etc on our server.( public folder), koi bhi access kr skta h
 
 app.use(cookieParser()) // server se hi user ke browser ke cookies par CRUD operations kr paayun
 export {app}
