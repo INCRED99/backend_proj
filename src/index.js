@@ -9,11 +9,11 @@ dotenv.config({
 
 
 
-connectdb().then(()=>{
+connectdb().then(()=>{  
     app.listen(process.env.PORT || 8000, ()=>{
         console.log("server listening at port:",process.env.PORT);
         
-    }) // database to connect hogaya par hamari express app database ka use karte huye listen karna shuru nhi kiya abhi tk
+    }) // starting the server/database to connect hogaya par hamari express app database ka use karte huye listen karna shuru nhi kiya abhi tk
 }).catch((error)=>{
 console.log("mongodb connection failed",error);
 
