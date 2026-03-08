@@ -17,4 +17,13 @@ app.use(express.urlencoded({extended:true,limit:"16kb"})) // url configurations
 app.use(express.static("public"))  //storing files, folders, etc on our server.( public folder), koi bhi access kr skta h
 
 app.use(cookieParser()) // server se hi user ke browser ke cookies par CRUD operations kr paayun
+
+//routes import : 
+import router from '../routes/user.routes.js'
+
+// route declaration:
+app.use("/users",router)
+
+
 export {app}
+
